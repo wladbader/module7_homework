@@ -25,13 +25,23 @@ class forDomesticUse extends ElecEquip {
   switcher(str) {
     super.turnedOn(str);
   }
+
+  constructor(power, name, color) {
+    super(power, name);
+    this.color = color;
+    this.getColor = function () {
+      console.log(`${name}'s color is ${this.color}`);
+    };
+  }
 }
 
 const computer = new forDomesticUse();
 const microwave = new forDomesticUse("380 W", "Microwave");
-const iron = new forDomesticUse("220 W", "Iron");
+const iron = new forDomesticUse("220 W", "Iron", "green");
 
 iron.switcher("1");
 
 iron.getPower();
 microwave.getPower();
+
+iron.getColor();
